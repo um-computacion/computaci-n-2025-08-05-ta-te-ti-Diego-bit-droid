@@ -1,20 +1,22 @@
-from tateti import tateti
-def main():
-    print('Bienvenidos al tateti')
-    juego=tateti()
-    while True:
-        print("tablero...")
-        print(juego.tablero)
-        print('Turno del jugador')
-              
-        fil=input(int('Ingrese fila: '))
-        col=input(int('Ingrese columna: '))
-        try:
-            juego.ocupar_una_de_las_casillas(fil,col)
-        except Exception as e:
-            print(f'Error: {e}')
-            continue
-         
+from tateti import Tateti
 
-if __name__ == "__main__":
+
+def main():
+    print("Bienvenidos al Tateti")
+    juego = Tateti()
+    while True:
+        print("Tablero: filas 0-2, columnas 0-2")
+        juego.tablero.mostrar()
+        print("Turno: ")
+        print(juego.turno)
+        try:
+            fil = int(input("Ingrese fila"))
+            col = int(input("Ingrese col"))
+            juego.ocupar_una_de_las_casillas(fil, col)
+        except Exception as e:
+            print(e)
+
+
+
+if __name__ == '__main__':
     main()

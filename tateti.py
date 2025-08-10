@@ -1,13 +1,14 @@
-from tablero import tablero 
-class tateti:
+from tablero import Tablero
+
+class Tateti:
     def __init__(self):
-        self.turno='X'
-        self.tablero=tablero()
-    def ocupar_una_de_las_casillas(self,fila,columna):
-        if self.tablero.colocar_ficha(fila,columna,self.turno):
-            if self.turno=='X':
-                self.turno='0'
-            else:
-                self.turno='X'
+        self.turno = "X"
+        self.tablero = Tablero()
+
+    def ocupar_una_de_las_casillas(self, fil, col):
+        self.tablero.poner_la_ficha(fil, col, self.turno)
+        if self.turno == "X":
+            self.turno = "0"
         else:
-            print('La casilla ya esta ocupada, intente de nuevo')
+            self.turno = "X"
+

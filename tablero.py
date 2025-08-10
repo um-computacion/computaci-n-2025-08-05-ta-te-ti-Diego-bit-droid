@@ -1,14 +1,23 @@
-class tablero:
+class PosOcupadaException(Exception):
+    ...
+
+
+class Tablero:
     def __init__(self):
-        self.tablero=(["","",""],
-                      ["","",""],
-                      ["","",""])
+        self.contenedor = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""],
+        ]
 
-    def colocar_ficha(self,fila,columna,ficha):
-        if self.tablero[fila][columna]=="":
-            self.tablero[fila][columna]=ficha
-            return True
+    def poner_la_ficha(self, fil, col, ficha):
+        if self.contenedor[fil][col] == "":
+            self.contenedor[fil][col] = ficha
         else:
-            raise PosOcupadaError("La posicion ya esta ocupada")
+            raise PosOcupadaException("posicion ocupada!")
 
-
+    def mostrar(self):
+        for fila in self.contenedor:
+            print("-" * 16)
+            print("   |   ".join(fila))
+            print("-" * 16)
