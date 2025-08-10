@@ -10,12 +10,17 @@ def main():
         print("Turno: ")
         print(juego.turno)
         try:
-            fil = int(input("Ingrese fila"))
-            col = int(input("Ingrese col"))
-            juego.ocupar_una_de_las_casillas(fil, col)
+            fil = int(input("Ingrese fila: "))
+            col = int(input("Ingrese columna: "))
+            estado = juego.ocupar_una_de_las_casillas(fil, col)
+            if estado == "GANADOR" or estado == "EMPATE":
+                break
+
+        except ValueError:
+            print("Ingrese solo numeros enteros entre el 0 y 2")
         except Exception as e:
             print(e)
-
+    
 
 
 if __name__ == '__main__':
