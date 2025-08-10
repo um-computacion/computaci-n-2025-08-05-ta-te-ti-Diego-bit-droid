@@ -1,7 +1,7 @@
 class PosOcupadaException(Exception):
-    ...
-
-
+    pass
+class PosNoExistenteException(Exception):   
+    pass
 class Tablero:
     def __init__(self):
         self.contenedor = [
@@ -11,10 +11,13 @@ class Tablero:
         ]
 
     def poner_la_ficha(self, fil, col, ficha):
+        if fil < 0 or fil > 2 or col < 0 or col > 2:
+            raise PosNoExistenteException("posicion no existente!")
         if self.contenedor[fil][col] == "":
             self.contenedor[fil][col] = ficha
         else:
             raise PosOcupadaException("posicion ocupada!")
+        
 
     def mostrar(self):
         for fila in self.contenedor:
