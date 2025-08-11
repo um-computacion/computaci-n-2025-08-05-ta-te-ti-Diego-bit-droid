@@ -1,4 +1,4 @@
-from tateti import Tateti
+from clases.tateti import Tateti
 
 
 def main():
