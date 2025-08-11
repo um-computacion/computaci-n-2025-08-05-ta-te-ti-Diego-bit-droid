@@ -1,5 +1,5 @@
 
-Nombre:Diego Aubone 
+Nombre:Diego Aubone------Carrera: Ingenieria Informatica--------Legajo: 64210
 
 Iniciar codigo: python -m cli
 
