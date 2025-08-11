@@ -1,5 +1,5 @@
-from tablero import Tablero
-import tablero
+from clases.tablero import Tablero
+import clases.tablero as tablero
 
 class Tateti:
     def __init__(self):
