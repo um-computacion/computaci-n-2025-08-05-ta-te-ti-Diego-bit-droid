@@ -1,4 +1,7 @@
 from clases.tateti import Tateti
+from clases.excepciones import PosOcupadaException, PosNoExistenteException
+
+
 
 
 def main():
@@ -6,7 +9,7 @@ def main():
     juego = Tateti()
     while True:
         print("Tablero: filas 0-2, columnas 0-2")
-        juego.tablero.mostrar()
+        juego.get_tablero()
         print("Turno: ")
         print(juego.turno)
         try:
@@ -18,6 +21,10 @@ def main():
 
         except ValueError:
             print("Ingrese solo numeros enteros entre el 0 y 2")
+        except PosOcupadaException:
+            print("Posicion ocupada")
+        except PosNoExistenteException:
+            print("Posicion no existe")
         except Exception as e:
             print(e)
     

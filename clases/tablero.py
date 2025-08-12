@@ -1,7 +1,5 @@
-class PosOcupadaException(Exception):
-    pass
-class PosNoExistenteException(Exception):   
-    pass
+from clases.excepciones import PosOcupadaException,PosNoExistenteException
+
 class Tablero:
     def __init__(self):
         self.contenedor = [

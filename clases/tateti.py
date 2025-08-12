@@ -1,10 +1,13 @@
 from clases.tablero import Tablero
 import clases.tablero as tablero
 
+
 class Tateti:
     def __init__(self):
         self.turno = "X"
         self.tablero = Tablero()
+    def get_tablero(self):
+        return self.tablero.mostrar()
 
     def ocupar_una_de_las_casillas(self, fil, col):
         self.tablero.poner_la_ficha(fil, col, self.turno)
